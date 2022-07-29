@@ -21,5 +21,5 @@ echo "Generate root ca cert $CA_NAME.crt"
   -nodes \
   -key $CA_NAME.key \
   -days 35600 \
-  -subj "/C=RU/O=RES" \
+  -subj "/C=RU/O=$CA_NAME" \
   -out $CA_NAME.crt

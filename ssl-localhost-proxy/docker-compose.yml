@@ -1,0 +1,14 @@
+version: "3.4"
+
+services:
+  proxy:
+    image: nginx:${TAG_NGINX}
+    ports:
+      - "90:90"
+    volumes:
+      - "./web/conf/conf.nginx:/etc/nginx/conf.d/proxy.conf:ro"
+      - "./web/conf/cert.crt:/etc/nginx/cert.crt:ro"
+      - "./web/conf/cert.key:/etc/nginx/cert.key:ro"
+#      - "./path/to/static:/srv/someStatic:ro"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

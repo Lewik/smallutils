@@ -21,7 +21,7 @@ prompt = no
 countryName = RU
 stateOrProvinceName = N/A
 localityName = N/A
-organizationName = RES
+organizationName = $CA_NAME
 commonName = $DOMAIN, $IP_ADDRESS: Self-signed certificate
 [req_ext]
 subjectAltName = @alt_names
