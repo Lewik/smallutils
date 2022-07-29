@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if openssl version | grep -i "LibreSSL" > /dev/null; then
+  echo "openssl points to LibreSSL will generate old certificates, use OpenSSL instead of LibreSSL"
+  exit 1
+fi
+
 if [ -z "$3" ]
 then
   echo "Usage: $0 CA_NAME domain_name ip_address"

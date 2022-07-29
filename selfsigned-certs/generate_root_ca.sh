@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-# Constants
+
+if openssl version | grep -i "LibreSSL" > /dev/null; then
+  echo "openssl points to LibreSSL will generate old certificates, use OpenSSL instead of LibreSSL"
+  exit 1
+fi
 
 if [ -z "$1" ]
 then
